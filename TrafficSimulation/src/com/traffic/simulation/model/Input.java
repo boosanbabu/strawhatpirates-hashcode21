@@ -10,7 +10,8 @@ public class Input {
 	List<Street> streets;
 	int points;
 	int carCount;
- 
+	List<CarStreets> carInfoList;
+
 	public Input(int simTime, int intersecCount, int streetCount, int carCount, int points) {
 		simulationTime = simTime;
 		noOfIntersections = intersecCount;
@@ -18,6 +19,12 @@ public class Input {
 		this.points = points;
 		this.carCount = carCount;
 		streets = new ArrayList<>();
+		carInfoList = new ArrayList<>();
+	}
+
+	public void addCarInfo(int n, String... st) {
+		CarStreets car = new CarStreets(n, st);
+		carInfoList.add(car);
 	}
 
 	public void addStreet(int start, int end, String name, int time) {
@@ -59,6 +66,13 @@ public class Input {
 
 	public void setPoints(int points) {
 		this.points = points;
+	}
+
+	@Override
+	public String toString() {
+		return "Input [simulationTime=" + simulationTime + ", noOfIntersections=" + noOfIntersections + ", noOfStreets="
+				+ noOfStreets + ", streets=" + streets + ", points=" + points + ", carCount=" + carCount + "\n "
+				+ carInfoList + "]";
 	}
 
 }

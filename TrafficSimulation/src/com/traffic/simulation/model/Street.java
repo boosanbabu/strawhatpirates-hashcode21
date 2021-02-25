@@ -8,7 +8,7 @@ public class Street {
 	public int getStart() {
 		return start;
 	}
- 
+
 	public void setStart(int start) {
 		this.start = start;
 	}
@@ -35,6 +35,11 @@ public class Street {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	@Override
+	public String toString() {
+		return "Street [start=" + start + ", end=" + end + ", timeTaken=" + timeTaken + ", name=" + name + "]";
 	}
 
 }

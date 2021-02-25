@@ -26,4 +26,10 @@ public class CarStreets {
 	public void setStreetNames(String[] streetNames) {
 		this.streetNames = streetNames;
 	}
+
+	@Override
+	public String toString() {
+		return "CarStreets [noOfStreets=" + noOfStreets + ", streetNames=" + Arrays.toString(streetNames) + "]";
+	}
+
 }

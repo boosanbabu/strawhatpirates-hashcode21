@@ -35,15 +35,25 @@ public class FileUtil {
 		int points = Integer.valueOf(line1[4]);
 
 		Input input = new Input(simTime, intersections, streets, cars, points);
-
-		for (int i = 0; i < intersections; i++) {
-			String str[] = inputStrList.get(i + 1).split("\\s+");
+		int l = 1;
+		for (int i = 0; i < streets; i++) {
+			String str[] = inputStrList.get(l++).split("\\s+");
 			int start = Integer.valueOf(str[0]);
 			int end = Integer.valueOf(str[1]);
 			String name = str[2];
 			int time = Integer.valueOf(str[3]);
 			input.addStreet(start, end, name, time);
 		}
+
+		for (int i = 0; i < cars; i++) {
+			String str[] = inputStrList.get(l++).split("\\s+");
+			int n = Integer.valueOf(str[0]);
+			String[] sts = new String[n];
+			for (int s = 0; s < n; s++)
+				sts[s] = str[s + 1];
+			input.addCarInfo(n, sts);
+		}
+
 		return input;
 	}
 }
