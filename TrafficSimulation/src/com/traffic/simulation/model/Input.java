@@ -10,7 +10,7 @@ public class Input {
 	List<Street> streets;
 	int points;
 	int carCount;
-
+ 
 	public Input(int simTime, int intersecCount, int streetCount, int carCount, int points) {
 		simulationTime = simTime;
 		noOfIntersections = intersecCount;

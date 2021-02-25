@@ -37,6 +37,11 @@ public class FileUtil {
 		Input input = new Input(simTime, intersections, streets, cars, points);
 
 		for (int i = 0; i < intersections; i++) {
+			String str[] = inputStrList.get(i + 1).split("\\s+");
+			int start = Integer.valueOf(str[0]);
+			int end = Integer.valueOf(str[1]);
+			String name = str[2];
+			int time = Integer.valueOf(str[3]);
 			input.addStreet(start, end, name, time);
 		}
 		return input;

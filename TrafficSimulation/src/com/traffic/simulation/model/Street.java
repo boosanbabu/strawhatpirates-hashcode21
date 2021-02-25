@@ -8,7 +8,7 @@ public class Street {
 	public int getStart() {
 		return start;
 	}
-
+ 
 	public void setStart(int start) {
 		this.start = start;
 	}
